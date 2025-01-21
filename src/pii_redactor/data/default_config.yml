@@ -1,0 +1,41 @@
+# Default PII detection patterns and configurations
+patterns:
+  email: \b[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\b
+  ssn: \b(?!000|666|9\d{2})\d{3}-(?!00)\d{2}-(?!0000)\d{4}\b
+  credit_card: \b(?:\d[ -]*?){13,19}\b
+  phone: |
+    (?:\+?(\d{1,3}))?                # Country code
+    (?:[-.\s]?\(?\d{1,4}\)?)?        # Area code
+    (?:[-.\s]+\d{2,5}){2,}           # Local number
+    \b
+  org_keywords: \b(Company|Corp|LLC|Inc|Ltd)\b
+
+locales:
+  en_US:
+    ner_model: en_core_web_sm
+    honorifics:
+      - Dr.
+      - Mr.
+      - Mrs.
+      - Ms.
+      - Prof.
+    patterns: {}
+
+  es_ES:
+    ner_model: es_core_news_sm
+    honorifics:
+      - Dr.
+      - Dra.
+      - Sr.
+      - Sra.
+      - Don
+      - Doña
+    patterns:
+      dni: (DNI|NIE)\s*:?\s*[\dX-Z]{8,9}
+      iban: ES\d{2}\s?\d{4}\s?\d{4}\s?\d{4}\s?\d{4}\s?\d{4}
+      org_keywords: \b(Empresa|Compañía|Corporación)\b
+
+supported_formats:
+  - .txt
+  - .docx
+  - .pdf
