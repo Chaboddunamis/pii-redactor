@@ -1,0 +1,12 @@
+# Core dependencies
+spacy>=3.0
+python-docx>=0.8.11
+pdfplumber>=0.6.0
+phonenumbers>=8.12.0
+luhn
+pyyaml>=5.0
+
+# SpaCy language models (install after core packages)
+# Run these commands:
+# python -m spacy download en_core_web_sm
+# python -m spacy download es_core_news_sm
