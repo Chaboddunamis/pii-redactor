@@ -46,7 +46,6 @@ spaCy-powered detection for:
 - Organization Keywords: Empresa, Compañía, Corporación
 
 ### ⚙ Configuration System
-```yaml
 # custom_config.yml
 patterns:
   custom_id: '\bID-\d{4}-[A-Z]{2}\b'  # Add new patterns
