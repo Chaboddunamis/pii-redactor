@@ -3,10 +3,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-# 🔐 PII Redactor Library
 
-![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 A robust, production-grade toolkit for sensitive data detection and anonymization across documents, emails, and structured text. Combines regex pattern matching with AI-powered entity recognition to safeguard personal information while preserving file integrity.
 
