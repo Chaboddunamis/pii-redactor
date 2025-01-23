@@ -46,6 +46,7 @@ spaCy-powered detection for:
 - Organization Keywords: Empresa, Compañía, Corporación
 
 ### ⚙ Configuration System
+```yaml
 # custom_config.yml
 patterns:
   custom_id: '\bID-\d{4}-[A-Z]{2}\b'  # Add new patterns
@@ -57,9 +58,11 @@ locales:
   en_US:
     ner_model: en_core_web_md  # Upgrade model
     honorifics: [Chair., Rep.]  # Custom honorifics
+```
 
 
 📊 Redaction Logging
+```json
 Structured JSON log format:
 [
   {
@@ -69,8 +72,10 @@ Structured JSON log format:
     "pii_type": "email"
   }
 ]
+```
 
 🚀 Installation
+```python
 # Base installation
 pip install pii_redactor
 
@@ -80,7 +85,7 @@ python -m spacy download es_core_news_sm
 
 # Optional dependencies
 pip install pdfplumber python-docx reportlab
-
+```
 
 🛠 Usage Examples
 ## 🚀 Usage Examples (Preview)
@@ -104,9 +109,10 @@ locales:
 # Initialize with custom config
 custom_config = PIIConfig("custom_config.yml")
 print("🛠 Custom DNI Pattern:", custom_config.config['locales']['es_ES']['patterns']['dni'])
-
+```
 
 2️⃣ Multi-Format File Handling
+```python
 from pathlib import Path
 from pii_redactor.pii_redactor import FileHandler
 
@@ -120,9 +126,10 @@ for fmt in ['.txt', '.docx', '.pdf']:
     FileHandler.write(test_content, file_path)
     print(f"\n📁 {fmt} Preview:")
     print(FileHandler.read(file_path)[:100])  # First 100 characters
-
+```
 
 3️⃣ English PII Processing
+```python
 from pii_redactor.pii_redactor import PIIRedactor
 
 # Initialize detector
@@ -141,9 +148,10 @@ for pii_type, matches in pii_data.items():
 
 redacted = redactor.redact_text(text, pii_data)
 print("\n🔴 Redacted Text:", redacted)
-
+```
 
 4️⃣ Spanish PII Handling
+```python
 es_text = """Sr. Carlos García con DNI X1234567X
 IBAN: ES12 3456 7890 1234 5678 9012
 Trabaja en Empresa Ejemplo SL"""
@@ -158,10 +166,11 @@ print("- IBAN Found:", any('ES12' in iban for iban in pii_data.get('iban', [])))
 
 redacted_es = redactor_es.redact_text(es_text, pii_data)
 print("\n🔴 Redacted Spanish Text:\n", redacted_es)
-
+```
 
 
 5️⃣ Redaction Reversal
+```python
 from pii_redactor.pii_redactor import RedactionRecord
 
 original = "Secret: 4111-1111-1111-1111"
@@ -173,8 +182,10 @@ redacted = redactor.redact_text(original, {'credit_card': ['4111-1111-1111-1111'
 # Reverse using log
 restored = redactor.reverse_redaction(redacted, redactor.redaction_log)
 print(f"\n⏮ Restoration Match: {original == restored}")  # True
+```
 
 6️⃣ Full Processing Pipeline
+```python
 from pathlib import Path
 import json
 
@@ -193,7 +204,7 @@ print(f"- Generated {output_file}")
 log_file = output_file.with_suffix('.log.json')
 with open(log_file) as f:
     print("\n📋 Redaction Log Preview:", json.load(f)[:2])
-
+```
 
 
 ⌛ Coming Soon
@@ -210,6 +221,7 @@ CLI stability improvements (v2.0)
 
 
 ⌨ CLI Interface (Beta)
+```bash
 # Basic redaction
 pii_redact input.pdf output.pdf --locale es_ES
 
@@ -221,11 +233,13 @@ pii_redact redacted.txt restored.txt --reverse log.json
 
 # Verbose output
 pii_redact document.txt output.txt -v
+```
 
 Full CLI stability coming in v2.0
 
 
 🧩 Architecture
+```yaml
 graph TD
     A[Input File] --> B{File Handler}
     B -->|Text Extraction| C[PII Detector]
@@ -237,6 +251,8 @@ graph TD
     G --> H[Redacted File]
     F --> I[Log Generator]
     I --> J[Redaction Log]
+```
+
 
 🤝 Contributing
 Report issues via GitHub Issues
