@@ -13,7 +13,7 @@ A robust, production-grade toolkit for sensitive data detection and anonymizatio
 - Process text files, Word documents, and PDFs without losing formatting
 
 ### 🔍 Hybrid Detection Engine
-- 🕵️ **Regex Patterns**: 40+ built-in rules for emails, phones, IDs, financial data  
+- 🕵️ **Regex Patterns**: Multiple built-in rules for emails, phones, IDs, financial data  
 - 🧠 **AI/NLP Analysis**: spaCy-powered recognition of names, organizations, and contextual entities
 
 ### 🌍 Localization Ready
@@ -23,12 +23,11 @@ A robust, production-grade toolkit for sensitive data detection and anonymizatio
 
 ### 🏢 Enterprise-Grade Redaction
 - Audit-ready JSON logs with exact match positions  
-- Reversible anonymization via cryptographic hashing  
-- Configurable masking characters (▰, █, X)
+- Reversible anonymization   
+
 
 ### ⚙ Customizable Pipeline
 - YAML-based rule configurations  
-- Plugin architecture for custom detectors  
 - Model upgrades for industry-specific terminology
 
 ## 📋 Supported PII Types
@@ -45,18 +44,17 @@ A robust, production-grade toolkit for sensitive data detection and anonymizatio
 - 🔏 **Data Sanitization**: Prepare datasets for ML/Analytics  
 - 📄 **Document Compliance**: GDPR/HIPAA-ready redaction  
 - 🔐 **Secure Sharing**: Anonymize contracts, reports, emails  
-- 🕵️ **Forensics**: Identify leaks in document repositories  
+
 
 ## 💡 Why This Library?
 
 Unlike basic redaction tools, this solution:  
 1. **Preserves original file layouts** (PDF/DOCX tables, formatting)  
 2. **Detects indirect PII leaks** (e.g., "Dr. Smith at ABC Corp")  
-3. **Scales from single documents** to batch processing  
-4. **Future-proofs workflows** via customizable rules  
+3. **Future-proofs workflows** via customizable rules  
 
 > **Developer Note**  
-> 🔴 CLI currently in beta - full production stability coming in v2.0
+> 🔴 CLI currently in beta - full  stability coming in v2.0
 ## 🌟 Feature Overview
 
 ### 🔍 PII Detection Engine
@@ -76,7 +74,7 @@ spaCy-powered detection for:
 - Multi-word entity grouping with context analysis
 
 ### 🛡 Redaction Capabilities
-- █ Full-character redaction with configurable mask character
+- █ Full-character redaction
 - 📝 Position-aware logging of all redactions
 - 🔄 Bidirectional redaction reversal using operation logs
 - 🧩 Intelligent overlap merging for nested matches
