@@ -6,10 +6,21 @@ ENV/
 # Python cache
 __pycache__/
 *.py[cod]
+*$py.class
 
 # IDE files
 .vscode/
 .idea/
+
+
+# Test artifacts
+.coverage
+nosetests.xml
+test_*.xml
+
+# Distribution / packaging
+*.egg-info/
+
 
 # Local development files
 *.env
