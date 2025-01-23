@@ -3,7 +3,69 @@
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Advanced, comprehensive PII detection and redaction solution with multi-format support
+PII Redactor Library
+A robust, production-grade toolkit for sensitive data detection and anonymization across documents, emails, and structured text. Combines regex pattern matching with AI-powered entity recognition to safeguard personal information while preserving file integrity.
+
+Key Features
+Multi-Format Support: Process text files, Word documents, and PDFs without losing formatting
+
+Hybrid Detection Engine:
+
+🕵️ Regex Patterns: 40+ built-in rules for emails, phones, IDs, financial data
+
+🧠 AI/NLP Analysis: spaCy-powered recognition of names, organizations, and contextual entities
+
+Localization Ready:
+
+🇺🇸 English (SSN, credit cards)
+
+🇪🇸 Spanish (DNI, IBAN, localized entities)
+
+🛠 Custom locale templates
+
+Enterprise-Grade Redaction:
+
+Audit-ready JSON logs with exact match positions
+
+Reversible anonymization via cryptographic hashing
+
+Configurable masking characters (▰, █, X)
+
+Customizable Pipeline:
+
+YAML-based rule configurations
+
+Plugin architecture for custom detectors
+
+Model upgrades for industry-specific terminology
+
+Supported PII Types
+Category	Examples	Validation
+Identification	SSN, DNI, NIE, Passport	Format + Checksum
+Financial	Credit Cards, IBAN	Luhn Algorithm
+Contact	Emails, Phone Numbers	RFC/ITU Compliance
+Professional	Names + Titles, Organizations	Contextual NLP
+Use Cases
+🔏 Data Sanitization: Prepare datasets for ML/Analytics
+
+📄 Document Compliance: GDPR/HIPAA-ready redaction
+
+🔐 Secure Sharing: Anonymize contracts, reports, emails
+
+🕵️ Forensics: Identify leaks in document repositories
+
+Why This Library?
+Unlike basic redaction tools, this solution:
+
+Preserves original file layouts (PDF/DOCX tables, formatting)
+
+Detects indirect PII leaks (e.g., "Dr. Smith at ABC Corp")
+
+Scales from single documents to batch processing
+
+Future-proofs workflows via customizable rules
+
+Developer Note: CLI currently in beta - full production stability coming in v2.0.
 
 ## 🌟 Feature Overview
 
@@ -63,7 +125,6 @@ locales:
 
 📊 Redaction Logging
 ```json
-Structured JSON log format:
 [
   {
     "start": 45,
@@ -208,15 +269,11 @@ with open(log_file) as f:
 
 
 ⌛ Coming Soon
-Full API documentation
-
-Detailed configuration guide
-
-Performance optimization tips
-
-Enterprise deployment strategies
-
-CLI stability improvements (v2.0)
+### Full API documentation
+### Detailed configuration guide
+### Performance optimization tips
+### Enterprise deployment strategies
+### CLI stability improvements (v2.0)
 
 
 
@@ -235,7 +292,7 @@ pii_redact redacted.txt restored.txt --reverse log.json
 pii_redact document.txt output.txt -v
 ```
 
-Full CLI stability coming in v2.0
+## Full CLI stability coming in v2.0
 
 
 🧩 Architecture
@@ -255,19 +312,14 @@ graph TD
 
 
 🤝 Contributing
-Report issues via GitHub Issues
-
-Develop features in dedicated branches
-
-Submit PRs with:
-
-Updated tests
-
-Documentation changes
-
-Type hints for new code
+### Report issues via GitHub Issues
+### Develop features in dedicated branches
+### Submit PRs with:
+### Updated tests
+### Documentation changes
+### Type hints for new code
 
 
 
 📜 License
-MIT License - See LICENSE for full details
+## MIT License - See LICENSE for full details
