@@ -3,70 +3,63 @@
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-PII Redactor Library
+# 🔐 PII Redactor Library
+
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 A robust, production-grade toolkit for sensitive data detection and anonymization across documents, emails, and structured text. Combines regex pattern matching with AI-powered entity recognition to safeguard personal information while preserving file integrity.
 
-Key Features
-Multi-Format Support: Process text files, Word documents, and PDFs without losing formatting
+## 🌟 Key Features
 
-Hybrid Detection Engine:
+### 📂 Multi-Format Support
+- Process text files, Word documents, and PDFs without losing formatting
 
-🕵️ Regex Patterns: 40+ built-in rules for emails, phones, IDs, financial data
+### 🔍 Hybrid Detection Engine
+- 🕵️ **Regex Patterns**: 40+ built-in rules for emails, phones, IDs, financial data  
+- 🧠 **AI/NLP Analysis**: spaCy-powered recognition of names, organizations, and contextual entities
 
-🧠 AI/NLP Analysis: spaCy-powered recognition of names, organizations, and contextual entities
+### 🌍 Localization Ready
+- 🇺🇸 English (SSN, credit cards)  
+- 🇪🇸 Spanish (DNI, IBAN, localized entities)  
+- 🛠 Custom locale templates
 
-Localization Ready:
+### 🏢 Enterprise-Grade Redaction
+- Audit-ready JSON logs with exact match positions  
+- Reversible anonymization via cryptographic hashing  
+- Configurable masking characters (▰, █, X)
 
-🇺🇸 English (SSN, credit cards)
+### ⚙ Customizable Pipeline
+- YAML-based rule configurations  
+- Plugin architecture for custom detectors  
+- Model upgrades for industry-specific terminology
 
-🇪🇸 Spanish (DNI, IBAN, localized entities)
+## 📋 Supported PII Types
 
-🛠 Custom locale templates
+| Category        | Examples                     | Validation            |
+|-----------------|------------------------------|-----------------------|
+| Identification  | SSN, DNI, NIE, Passport      | Format + Checksum     |
+| Financial       | Credit Cards, IBAN           | Luhn Algorithm        |
+| Contact         | Emails, Phone Numbers        | RFC/ITU Compliance    |
+| Professional    | Names + Titles, Organizations| Contextual NLP        |
 
-Enterprise-Grade Redaction:
+## 🛠 Use Cases
 
-Audit-ready JSON logs with exact match positions
+- 🔏 **Data Sanitization**: Prepare datasets for ML/Analytics  
+- 📄 **Document Compliance**: GDPR/HIPAA-ready redaction  
+- 🔐 **Secure Sharing**: Anonymize contracts, reports, emails  
+- 🕵️ **Forensics**: Identify leaks in document repositories  
 
-Reversible anonymization via cryptographic hashing
+## 💡 Why This Library?
 
-Configurable masking characters (▰, █, X)
+Unlike basic redaction tools, this solution:  
+1. **Preserves original file layouts** (PDF/DOCX tables, formatting)  
+2. **Detects indirect PII leaks** (e.g., "Dr. Smith at ABC Corp")  
+3. **Scales from single documents** to batch processing  
+4. **Future-proofs workflows** via customizable rules  
 
-Customizable Pipeline:
-
-YAML-based rule configurations
-
-Plugin architecture for custom detectors
-
-Model upgrades for industry-specific terminology
-
-Supported PII Types
-Category	Examples	Validation
-Identification	SSN, DNI, NIE, Passport	Format + Checksum
-Financial	Credit Cards, IBAN	Luhn Algorithm
-Contact	Emails, Phone Numbers	RFC/ITU Compliance
-Professional	Names + Titles, Organizations	Contextual NLP
-Use Cases
-🔏 Data Sanitization: Prepare datasets for ML/Analytics
-
-📄 Document Compliance: GDPR/HIPAA-ready redaction
-
-🔐 Secure Sharing: Anonymize contracts, reports, emails
-
-🕵️ Forensics: Identify leaks in document repositories
-
-Why This Library?
-Unlike basic redaction tools, this solution:
-
-Preserves original file layouts (PDF/DOCX tables, formatting)
-
-Detects indirect PII leaks (e.g., "Dr. Smith at ABC Corp")
-
-Scales from single documents to batch processing
-
-Future-proofs workflows via customizable rules
-
-Developer Note: CLI currently in beta - full production stability coming in v2.0.
-
+> **Developer Note**  
+> 🔴 CLI currently in beta - full production stability coming in v2.0
 ## 🌟 Feature Overview
 
 ### 🔍 PII Detection Engine
